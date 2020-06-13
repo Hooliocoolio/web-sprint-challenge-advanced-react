@@ -28,9 +28,37 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
+
 1. Explain how to build stateful class components.
 
+  To create a stateful component you must first define an initial state inside the class component.
+    class <component> extends <component>{
+      state = 
+        property: [],
+    }
+
+
+
 2. Describe the different phases of the component lifecycle.
+
+    there are 4 different phases of component lifycycles: initialization, mounting, updating, and unmounting.
+      INITIALIZATION is the phase where you would define defaults and initial values for <this.props> and <this.state>
+      by implementing <getDefaultProps()> and <getInitialState()>. The <getDefaultProps()> is called once, cached, and 
+      shared across instances. The <getInitialState()> method is invoked right before the mounting phase. The return 
+      value of this method will be used as the initial value of <this.state>.
+
+      MOUNTING is the process that occurs when a component is being inserted into the DOM.
+      Consists of 2 phases <componentDidMount> and the other one of them <componentWIllMount> which is actually being depreciated 
+      at this time.
+
+      UPDATING phase in React is when a component is already inserted into the DOM and gives opportunity to react to the prop
+      transition before the <render()> method is called and you can also access the old props via <this.props>. <shouldComponentUpdate()>
+      method is sometimes used if performance is lagging.
+
+      UNMOUNTING is the last phase and is usually called before the component is unmounted from the DOM. its used to perform any cleanup such
+      as invalidating timers or cleaning up any DOM elements that were created in the <componentDidMount>.
+
+      Basically component lifecycle methods gives us the opportunity to perform certain actions when the component is created and destroyed. It also allows us to react to props and state changes accordingly, to easily integrate third-party libraries and to tackle performance optimization problems.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
