@@ -28,15 +28,49 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
+//----------------------------------------------------------------
 1. Explain how to build stateful class components.
 
-2. Describe the different phases of the component lifecycle.
+  To create a stateful component you must first define an initial state inside the class component.
+    class <component> extends <component>{
+      state =   define its properties 
+        property: [],
+    }
+    render() with  return 
+    then export
 
+//----------------------------------------------------------------
+2. Describe the different phases of the component lifecycle.
+ 
+ There are 3 phases. 
+ the BIRTH/MOUNTING PHASE-which is when the component is being build from the 
+ ground up. all initial data that will be accessed will be defined here in the constructor during 
+ this phase along with the render method and componentDidMount.
+ the UPDATING-GROWTH PHASE this is obviosuly when the component is updating the state 
+ and the third one is the UNMOUNTING PHASE or DEATH...pretty much self explanatory 
+
+//----------------------------------------------------------------
 3. Demonstrate an understanding of class component lifecycle methods.
 
-4. Define stateful logic.
+  My understanding of lifecycle methods should not be used unless you
+   really have to. but certain lifecycle methods allow you to do things 
+   without the dom like componentDidMount. can use this to load data in 
+   your component. 
+   a shouldComponentUpdate method, called with nextProps as the first argument, and nextState is the second. it allows your component to only update if the props you care about change.
+  componentWillUnmount is used for cleaning up any leftover debris from your component.
 
+//----------------------------------------------------------------
+4. Define stateful logic.
+its pretty much a component that holds and/or maintains state via props
+
+//----------------------------------------------------------------
 5. Describe how to test a React component with React Testing Library.
+  
+First you ARRANGE your test by setting up code so that it can be tested 
+Then you ACT by calling a method or function that returns the result of your test. 
+Finally you ASSERT if what you expected you got actually returned.
+//----------------------------------------------------------------
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -51,7 +85,7 @@ _This project uses a local server for the data fetching. You will need three sep
 3. _and one to run your tests_
 
 _Please follow the setup instructions closely so that you can get everything up and running smoothly_
-
+Hoolio
 **Basic set up**
 
 - [ ] Create a forked copy of this project
